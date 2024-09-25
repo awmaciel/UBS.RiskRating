@@ -1,0 +1,3 @@
+for the application to be extensible, the principle of open and closed SOLID was followed using the design patterns strategy
+This way other classifications can be implemented without modifying the objects already created, this way the principle of single responsibility is also preserved.
+A class called PEP will be created which will contain the rules for the new classification
