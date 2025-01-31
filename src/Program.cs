@@ -12,18 +12,16 @@ namespace UBS.RiskRating
         {
             try
             {
-            // Reading the reference date
             Console.Write("Enter the reference date (mm/dd/aaaa): ");
             DateTime referenceDate = DateTime.ParseExact(Console.ReadLine(), "MM/dd/yyyy", CultureInfo.InvariantCulture);
 
-            // Reading the number of trades
+            
             Console.Write("Enter the number of negotiations: ");
             int n = int.Parse(Console.ReadLine());
 
-            // List to store trades
+            
             List<Negotiation> negotiations = new List<Negotiation>();
 
-            // Reading the negotiations
             for (int i = 0; i < n; i++)
             {
                 Console.Write($"Inform the negotiation {i + 1} ( value sector date): ");
@@ -40,7 +38,6 @@ namespace UBS.RiskRating
                 });
             }
 
-            // Creating the categories
             var categories = new List<ICategory>
             {
                 new ExpiredCategory(referenceDate),
@@ -48,7 +45,6 @@ namespace UBS.RiskRating
                 new MediumRiskCategory()
             };
 
-            // Classifying trades
             foreach (var negotiation in negotiations)
             {
                 string category = null;
